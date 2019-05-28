@@ -101,8 +101,9 @@ public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.Entity
             ButterKnife.bind(this, itemView);
         }
 
-        public void bind(Comments comments){
-            this.name.setText(comments.getName());
+        public void bind(Comments comments) {
+            int indexOfEnd = (comments.getEmail().indexOf("@"));
+            this.name.setText(comments.getEmail().substring(0, indexOfEnd));
             this.body.setText(comments.getBody());
             this.commentId.setText(String.format("id - %s", comments.getId()));
         }

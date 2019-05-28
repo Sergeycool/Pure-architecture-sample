@@ -9,11 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.faceit.testopenplatform.R;
 import com.faceit.testopenplatform.di.components.ItemComponent;
-import com.faceit.testopenplatform.model.Comments;
 import com.faceit.testopenplatform.view.base.BaseFragment;
 
 import butterknife.BindView;

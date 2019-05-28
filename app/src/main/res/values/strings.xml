@@ -14,6 +14,6 @@
     <string name="first_id_hint">First ID</string>
     <string name="second_id_hint">Second ID</string>
     <string name="button_show">Show</string>
-
+    <string name="retry">retry</string>
 
 </resources>

@@ -21,14 +21,15 @@ import com.squareup.leakcanary.LeakCanary;
 
 public class Application extends MultiDexApplication {
 
-    private Application application;
+    private Application          application;
+    private ApplicationComponent applicationComponent;
+
 
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         MultiDex.install(this);
     }
-    private ApplicationComponent applicationComponent;
 
     @Override
     public void onCreate() {

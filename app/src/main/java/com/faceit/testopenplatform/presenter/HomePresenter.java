@@ -3,9 +3,7 @@ package com.faceit.testopenplatform.presenter;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 
-
 import com.faceit.testopenplatform.R;
-import com.faceit.testopenplatform.di.scopes.PerActivity;
 import com.faceit.testopenplatform.exception.ArrayIsEmptyException;
 import com.faceit.testopenplatform.exception.DefaultErrorBundle;
 import com.faceit.testopenplatform.exception.ErrorBundle;
@@ -20,8 +18,6 @@ import java.util.Collection;
 import java.util.HashMap;
 
 import javax.inject.Inject;
-
-
 
 import retrofit2.Response;
 
@@ -152,16 +148,14 @@ public class HomePresenter implements Presenter {
 
         @Override
         public void onNext(Response<ArrayList<Comments>> response) {
-            if(response.isSuccessful() && response.body() != null &&
+            if (response.isSuccessful() && response.body() != null &&
                     response.body().size() > 0) {
                 HomePresenter.this.showUsersCollectionInView(response.body());
-            }
-            else{
+            } else {
                 ArrayIsEmptyException exception = new ArrayIsEmptyException(
                         new Throwable(HomePresenter.this.viewItemListView.context().getString(R.string.exception_array_is_empty)));
                 HomePresenter.this.showErrorMessage(new DefaultErrorBundle(exception));
             }
-
         }
     }
 }

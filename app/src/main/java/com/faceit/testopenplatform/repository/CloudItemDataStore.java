@@ -35,6 +35,7 @@ public class CloudItemDataStore implements ItemDataStore {
 
     @Override
     public Observable<Response<ArrayList<Comments>>> getComments(Map<String, String> parameters) {
-        return restApi.getComments(parameters).delay(5, TimeUnit.SECONDS);
+        return restApi.getComments(parameters);
+        //.delay(5, TimeUnit.SECONDS); //for sample only
     }
 }
